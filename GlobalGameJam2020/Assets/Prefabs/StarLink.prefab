@@ -79,6 +79,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextLink: {fileID: 0}
+  LinkBeyond: {fileID: 0}
+  Rail: {fileID: 0}
+  LinkPrefab: {fileID: 114770236860366124}
+  Active: 1
 --- !u!212 &212213273606805000
 SpriteRenderer:
   m_ObjectHideFlags: 1
