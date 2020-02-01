@@ -78,9 +78,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8dccea5f89b5440ca91b5b7365362aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkIntervalMin: 5
+  linkIntervalMax: 15
   NextLink: {fileID: 0}
   LinkBeyond: {fileID: 0}
-  Rail: {fileID: 0}
+  Rail: {fileID: 114591009464043266, guid: cfe6b47cb26194e2c827c5de0614d405, type: 2}
   LinkPrefab: {fileID: 114770236860366124}
   Active: 1
 --- !u!212 &212213273606805000

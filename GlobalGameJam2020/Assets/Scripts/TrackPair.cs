@@ -9,11 +9,12 @@ public class TrackPair : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Initialize();
+        //Initialize();
 	}
 
-    public void Initialize()
+    public void Initialize(bool damaged = false)
     {
+        Damaged = damaged;
         if (Damaged)
         {
             int choice = Random.Range(0, Parts.Length);

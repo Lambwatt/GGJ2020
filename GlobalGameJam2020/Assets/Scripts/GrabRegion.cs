@@ -17,7 +17,7 @@ public class GrabRegion : MonoBehaviour {
 	{
         
         string val = collision.tag;
-        Debug.Log("Collided with "+val+"!");
+        //Debug.Log("Collided with "+val+"!");
         if (val == "Pair")
         {
             //check if pair matches an element in the list

@@ -20,9 +20,9 @@ public class Train : MonoBehaviour {
             StartDelay -= Time.deltaTime;
             yield return null;
         }
-        Debug.Log("Start");
+//        Debug.Log("Start");
         Rb.velocity = new Vector2(1.0f, 0.0f) * Speed;
-        Debug.Log(Rb.velocity);
+        //Debug.Log(Rb.velocity);
     }
 
 	private void OnTriggerEnter2D(Collider2D collision)
