@@ -33,6 +33,7 @@ public class Train : MonoBehaviour {
         {
             //if complete live
             //else take damage and maybe die
+
         }
         else if(val == "Link")
         {
