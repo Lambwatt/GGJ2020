@@ -5,6 +5,7 @@ using UnityEngine;
 public class GrabRegion : MonoBehaviour {
 
     public SpriteRenderer Image;
+    public Spawner Spawner;
 
     List<Grabbable> GrabbedStuff;
 
@@ -25,6 +26,7 @@ public class GrabRegion : MonoBehaviour {
 
             if(pair.Damaged && GrabbedStuff.Count>0){
                 pair.Repair();
+                Spawner.StopTracking(GrabbedStuff[0].transform);
                 Destroy(GrabbedStuff[0].gameObject);
                 GrabbedStuff.RemoveAt(0);
             }

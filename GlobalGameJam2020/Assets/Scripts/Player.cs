@@ -39,4 +39,6 @@ public class Player : MonoBehaviour {
         transform.rotation = Quaternion.FromToRotation(Vector2.right, velocity);
         Rb.velocity = velocity * Speed;
 	}
+
+
 }

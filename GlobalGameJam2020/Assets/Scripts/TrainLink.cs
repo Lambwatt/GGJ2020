@@ -32,9 +32,10 @@ public class TrainLink : MonoBehaviour {
     {
         //Calculate destination
         Vector3 dir = (LinkBeyond.transform.position - NextLink.transform.position).normalized;
-        float angle = Mathf.Deg2Rad * (Random.Range(10.0f, 80.0f) * (Random.Range(0, 2) == 0 ? 1 : -1));
-        dir = new Vector3(Mathf.Cos(angle) * dir.x - Mathf.Sin(angle) * dir.y,
-                          Mathf.Sin(angle) * dir.x + Mathf.Cos(angle) * dir.y);
+        dir = Tools.RandomDirection(dir, 10.0f, 80.0f);
+        //float angle = Mathf.Deg2Rad * (Random.Range(10.0f, 80.0f) * (Random.Range(0, 2) == 0 ? 1 : -1));
+        //dir = new Vector3(Mathf.Cos(angle) * dir.x - Mathf.Sin(angle) * dir.y,
+                          //Mathf.Sin(angle) * dir.x + Mathf.Cos(angle) * dir.y);
         int distance = Random.Range(5, 15);
         //dir *= distance;
 
