@@ -5,7 +5,9 @@ using UnityEngine;
 public class TrackPair : MonoBehaviour {
     
     public bool Damaged;
+    public bool Fixed = false;
     public SpriteRenderer[] Parts;
+
 
 	// Use this for initialization
 	void Start () {
@@ -24,8 +26,10 @@ public class TrackPair : MonoBehaviour {
 
     public void Repair(){
         Damaged = false;
+        Fixed = true;
         for (int i = 0; i < Parts.Length; i++){
             Parts[i].color = Color.white;
         }
     }
+
 }

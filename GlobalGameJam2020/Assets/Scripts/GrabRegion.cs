@@ -6,6 +6,9 @@ public class GrabRegion : MonoBehaviour {
 
     public SpriteRenderer Image;
     public Spawner Spawner;
+    public PlayerBody ScoreManager;
+    public int FixPairValue = 5;
+    public int PickUpValue = 1;
 
     List<Grabbable> GrabbedStuff;
 
@@ -29,6 +32,7 @@ public class GrabRegion : MonoBehaviour {
                 Spawner.StopTracking(GrabbedStuff[0].transform);
                 Destroy(GrabbedStuff[0].gameObject);
                 GrabbedStuff.RemoveAt(0);
+                ScoreManager.AddToScore(FixPairValue);
             }
         }
         else if(val == "Grabbable")
@@ -36,6 +40,7 @@ public class GrabRegion : MonoBehaviour {
             collision.transform.SetParent(transform);
             GrabbedStuff.Add(collision.GetComponent<Grabbable>());
             collision.GetComponent<SpaceObject>().Stop();
+            ScoreManager.AddToScore(PickUpValue);
             //if On Add to list
             //otherwise don't
         }

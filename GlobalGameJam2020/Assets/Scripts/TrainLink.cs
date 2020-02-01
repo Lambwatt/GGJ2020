@@ -15,9 +15,7 @@ public class TrainLink : MonoBehaviour {
 
     public bool Active = true;
 
-
-
-    public void SetNextDirection(Train train)
+	public void SetNextDirection(Train train)
     {
         Vector3 dir = (NextLink.transform.position - transform.position).normalized;
         train.transform.position = transform.position;
@@ -43,7 +41,6 @@ public class TrainLink : MonoBehaviour {
         TrainLink link = Instantiate(LinkPrefab, LinkBeyond.transform.position + dir*distance, Quaternion.identity);
         NextLink.LinkBeyond = link;
         LinkBeyond.NextLink = link;
-
 
 
         //place tracks

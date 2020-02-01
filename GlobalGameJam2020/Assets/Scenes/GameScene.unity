@@ -652,6 +652,8 @@ MonoBehaviour:
   Rb: {fileID: 1320737710}
   Speed: 2
   HP: 3
+  TravelledPairValue: 10
+  Player: {fileID: 1589457160}
 --- !u!1 &1325025856
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +765,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 1325025859}
   Spawner: {fileID: 1800367546}
+  ScoreManager: {fileID: 1589457160}
+  FixPairValue: 5
+  PickUpValue: 1
 --- !u!1001 &1327737372
 Prefab:
   m_ObjectHideFlags: 0

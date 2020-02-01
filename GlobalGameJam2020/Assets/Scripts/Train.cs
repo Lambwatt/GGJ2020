@@ -9,6 +9,9 @@ public class Train : MonoBehaviour {
     public float Speed = 0.01f;
     public int HP = 3;
 
+    public int TravelledPairValue = 10;
+    public PlayerBody Player;
+
 	private void Start()
 	{
         StartCoroutine(WaitThenStart());
@@ -40,6 +43,11 @@ public class Train : MonoBehaviour {
                 //Rb.velocity = new Vector2(Mathf.Cos(angle) * Rb.velocity.x - Mathf.Sin(angle) * Rb.velocity.y,
                                           //Mathf.Sin(angle) * Rb.velocity.x + Mathf.Cos(angle) * Rb.velocity.y);
                 Rb.velocity *= 0.75f;
+            }else{
+                if (pair.Fixed)
+                {
+                    Player.AddToScore(TravelledPairValue);
+                }
             }
 
         }
