@@ -47,6 +47,7 @@ public class PlayerBody : MonoBehaviour {
     }
 
     private void Die(){
+        PlayerPrefs.SetInt("ActiveScore", Score);
         SceneManager.LoadScene("EndScreen");
     }
 }
