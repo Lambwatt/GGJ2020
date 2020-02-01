@@ -101,6 +101,9 @@
 -define:UNITY_EDITOR_OSX
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:ENABLE_VSTU
+'Assets/Scripts/FollowPlayer.cs'
+'Assets/Scripts/Grabbable.cs'
+'Assets/Scripts/GrabRegion.cs'
 'Assets/Scripts/Player.cs'
 'Assets/Scripts/ReturnToStart.cs'
 'Assets/Scripts/StartGame.cs'
