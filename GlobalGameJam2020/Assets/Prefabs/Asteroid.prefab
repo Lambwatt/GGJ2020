@@ -21,12 +21,11 @@ GameObject:
   - component: {fileID: 4478985531878254}
   - component: {fileID: 212833410039554270}
   - component: {fileID: 58755332795306414}
-  - component: {fileID: 114486800499655434}
   - component: {fileID: 114416277929976804}
   - component: {fileID: 50131194722657858}
   m_Layer: 0
-  m_Name: Diamond
-  m_TagString: Grabbable
+  m_Name: Asteroid
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +77,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.16
+  m_Radius: 0.32
 --- !u!114 &114416277929976804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -93,18 +92,6 @@ MonoBehaviour:
   Rb: {fileID: 50131194722657858}
   MinSpeed: 1
   MaxSpeed: 5
---- !u!114 &114486800499655434
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1807153116721536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a44c5ced1047044718dd23a1a06e1c82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PairType: Diamond
 --- !u!212 &212833410039554270
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -137,7 +124,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 43dbfb6cd789547bf846a60a5f9199f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 548f37a672dea4656bc5769072f55b53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

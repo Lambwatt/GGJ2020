@@ -35,6 +35,7 @@ public class GrabRegion : MonoBehaviour {
         {
             collision.transform.SetParent(transform);
             GrabbedStuff.Add(collision.GetComponent<Grabbable>());
+            collision.GetComponent<SpaceObject>().Stop();
             //if On Add to list
             //otherwise don't
         }
