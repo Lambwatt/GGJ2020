@@ -19,7 +19,14 @@ public class PlayerBody : MonoBehaviour {
     public AudioClip[] GetHit;
     public AudioClip[] Explosions;
 
+    public Animator Animator;
+
+    public FollowPlayer Camera;
+
+    public GameObject grabRegion;
+
     int TrainCount = 0;
+    bool alive = true;
 
 	// Use this for initialization
 	void Start () {
@@ -29,22 +36,35 @@ public class PlayerBody : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-        string val = collision.tag;
-        if(val == "Rock"){
-            
-            HP--;
-            UpdateHP();
-            if(HP<=0){
-                Die();
-            }else{
-                Source.PlayOneShot(GetHit[Random.Range(0, GetHit.Length)]);
+        if (alive)
+        {
+            string val = collision.tag;
+            if (val == "Rock")
+            {
+                HP--;
+                UpdateHP();
+                if (HP <= 0)
+                {
+                    Die();
+                }
+                else
+                {
+                    Source.PlayOneShot(GetHit[Random.Range(0, GetHit.Length)]);
+                }
             }
         }
 	}
 
+    public bool IsAlive(){
+        return alive;
+    }
+
     public void AddToScore(int points){
-        Score += points;
-        UpdateScore();
+        if (alive)
+        {
+            Score += points;
+            UpdateScore();
+        }
     }
 
     void UpdateScore(){
@@ -63,12 +83,36 @@ public class PlayerBody : MonoBehaviour {
         TrainCount -= 1;
         Debug.Log("Train Lost. Down to "+TrainCount);
         if(TrainCount<=0){
-            Die();
+            DieByTrain();
         }
     }
 
     private void Die(){
+        grabRegion.SetActive(false);
+        alive = false;
         PlayerPrefs.SetInt("ActiveScore", Score);
+        StartCoroutine(HandleDeath());
+    }
+
+    private void DieByTrain(){
+        grabRegion.SetActive(false);
+        alive = false;
+        PlayerPrefs.SetInt("ActiveScore", Score);
+        Camera.ShowDeathByTrain();
+        StartCoroutine(HandleDeathByTrain());
+    }
+
+    IEnumerator HandleDeathByTrain()
+    {
+        yield return new WaitForSeconds(10);
         SceneManager.LoadScene("EndScreen");
+    }
+
+    IEnumerator HandleDeath()
+    {
+        Animator.SetTrigger("Die");
+        Source.PlayOneShot(Explosions[Random.Range(0, Explosions.Length)]);
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("EndScreen"); 
     }
 }

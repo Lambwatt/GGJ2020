@@ -16,6 +16,8 @@ public class Train : MonoBehaviour {
     public AudioClip[] SkipSounds;
     public AudioClip[] ExplosionSounds;
 
+    public Animator Animator;
+
     bool dead = false;
 
 	private void Start()
@@ -55,6 +57,7 @@ public class Train : MonoBehaviour {
                 pair.Repair(false);
                 Source.PlayOneShot(SkipSounds[Random.Range(0, SkipSounds.Length)]);
                 Player.LoseTrain();
+                Die();
             }else{
                 if (pair.Fixed)
                 {
@@ -71,12 +74,15 @@ public class Train : MonoBehaviour {
 	}
 
     void Die(){
+        dead = true;
         StartCoroutine(HandleExplosion());
     }
 
     IEnumerator HandleExplosion()
     {
-        
+        yield return new WaitForSeconds(4);
+        Animator.SetTrigger("Die");
+        Source.PlayOneShot(ExplosionSounds[Random.Range(0, ExplosionSounds.Length)]);
         yield return new WaitForSeconds(4);
         Destroy(gameObject);
     }

@@ -1,0 +1,12 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: PlayerNormalTillDeath
+  m_Controller: {fileID: 9100000, guid: a71b7b4343be444e5972424826b99e95, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e8060728710684b68bce7934fa86ccbc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 71362106762da4037a064f45dd68485f, type: 2}
