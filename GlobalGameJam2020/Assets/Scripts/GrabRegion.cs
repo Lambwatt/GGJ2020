@@ -29,6 +29,7 @@ public class GrabRegion : MonoBehaviour {
 
             if(pair.Damaged && GrabbedStuff.Count>0){
                 pair.Repair();
+                Spawner.ActivateSpawner();
                 Spawner.StopTracking(GrabbedStuff[0].transform);
                 Destroy(GrabbedStuff[0].gameObject);
                 GrabbedStuff.RemoveAt(0);

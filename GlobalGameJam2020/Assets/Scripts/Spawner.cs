@@ -10,21 +10,31 @@ public class Spawner : MonoBehaviour {
     public int numObjects = 20;
     public float killRadius = 10;
     public float spawnRadius = 5;
+    public int MaxSpawnsPerUpdate = 2;
+
+    bool active = false;
 
 	private void Start()
 	{
         objs = new List<Transform>();
-        Spawn(numObjects);
+        //Spawn(numObjects);
 	}
 
 	private void Update()
 	{
-        List<Transform> killList = GetKillList();
-        Kill(killList);
+        if (active)
+        {
+            List<Transform> killList = GetKillList();
+            Kill(killList);
 
-        Spawn(numObjects-objs.Count, spawnRadius);
-
+            Spawn(Mathf.Min(numObjects - objs.Count, MaxSpawnsPerUpdate), spawnRadius);
+        }
 	}
+
+    public void ActivateSpawner(){
+        active = true;
+
+    }
 
     public void StopTracking(Transform obj){
         objs.Remove(obj);

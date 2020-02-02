@@ -9,9 +9,12 @@ public class SpaceObject : MonoBehaviour {
     public float MinSpeed = 1;
     public float MaxSpeed = 5;
 
+    public bool NeverMove = false;
+
 	// Use this for initialization
 	void Start () {
-        Rb.velocity = Tools.RandomDirection() * Random.Range(MinSpeed, MaxSpeed);
+        if(!NeverMove)
+            Rb.velocity = Tools.RandomDirection() * Random.Range(MinSpeed, MaxSpeed);
 	}
 
     public void Stop(){
