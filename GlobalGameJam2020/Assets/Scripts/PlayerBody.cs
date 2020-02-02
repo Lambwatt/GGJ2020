@@ -14,6 +14,11 @@ public class PlayerBody : MonoBehaviour {
     public Text ScoreText;
     public string ScoreHeader = "Score: ";
 
+    public AudioSource Source;
+
+    public AudioClip[] GetHit;
+    public AudioClip[] Explosions;
+
     int TrainCount = 0;
 
 	// Use this for initialization
@@ -31,6 +36,8 @@ public class PlayerBody : MonoBehaviour {
             UpdateHP();
             if(HP<=0){
                 Die();
+            }else{
+                Source.PlayOneShot(GetHit[Random.Range(0, GetHit.Length)]);
             }
         }
 	}

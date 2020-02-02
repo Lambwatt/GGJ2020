@@ -12,6 +12,10 @@ public class Train : MonoBehaviour {
     public int TravelledPairValue = 10;
     public PlayerBody Player;
 
+    public AudioSource Source;
+    public AudioClip[] SkipSounds;
+    public AudioClip[] ExplosionSounds;
+
     bool dead = false;
 
 	private void Start()
@@ -49,6 +53,7 @@ public class Train : MonoBehaviour {
                                           //Mathf.Sin(angle) * Rb.velocity.x + Mathf.Cos(angle) * Rb.velocity.y);
                 Rb.velocity *= 0.75f;
                 pair.Repair(false);
+                Source.PlayOneShot(SkipSounds[Random.Range(0, SkipSounds.Length)]);
                 Player.LoseTrain();
             }else{
                 if (pair.Fixed)
@@ -71,6 +76,7 @@ public class Train : MonoBehaviour {
 
     IEnumerator HandleExplosion()
     {
+        
         yield return new WaitForSeconds(4);
         Destroy(gameObject);
     }

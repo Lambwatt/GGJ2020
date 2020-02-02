@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour {
 
     public GameObject ThrusterSprites;
 
+    //public AudioSource Thrust;
+
 	// Use this for initialization
 	void Start () {
         ThrusterSprites.SetActive(false);
@@ -44,8 +46,10 @@ public class PlayerMovement : MonoBehaviour {
         {
             transform.rotation = Quaternion.FromToRotation(Vector2.right, velocity);
             ThrusterSprites.SetActive(true);
+            //Thrust.Play();
         }else{
             ThrusterSprites.SetActive(false);
+            //Thrust.Stop();
         }
     }
 

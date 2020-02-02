@@ -32,6 +32,7 @@ public class InventoryDisplay : MonoBehaviour {
             if(InventoryImages[i].sprite == s)
             {
                 Destroy(InventoryImages[i].gameObject);
+                InventoryImages.RemoveAt(i);
                 break;
             }
         }

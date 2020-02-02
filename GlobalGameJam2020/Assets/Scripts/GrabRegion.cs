@@ -11,6 +11,10 @@ public class GrabRegion : MonoBehaviour {
     public int PickUpValue = 1;
     public InventoryDisplay Display;
 
+    public AudioSource Source;
+    public AudioClip[] PickUpSounds;
+    public AudioClip[] DropOffSounds;
+
     List<Grabbable> GrabbedStuff;
 
 	private void Start()
@@ -34,6 +38,7 @@ public class GrabRegion : MonoBehaviour {
                     if (GrabbedStuff[i].PairType == pair.ActiveType)
                     {
                         pair.Repair();
+                        Source.PlayOneShot(DropOffSounds[Random.Range(0, DropOffSounds.Length)]);
                         Display.Remove(GrabbedStuff[i].GetComponent<SpriteRenderer>().sprite);
                         Spawner.ActivateSpawner();
                         Spawner.StopTracking(GrabbedStuff[i].transform);
@@ -56,6 +61,7 @@ public class GrabRegion : MonoBehaviour {
         }
         else if(val == "Grabbable")
         {
+            Source.PlayOneShot(PickUpSounds[Random.Range(0, PickUpSounds.Length)]);
             collision.transform.SetParent(transform);
             GrabbedStuff.Add(collision.GetComponent<Grabbable>());
             collision.GetComponent<SpaceObject>().Stop();
