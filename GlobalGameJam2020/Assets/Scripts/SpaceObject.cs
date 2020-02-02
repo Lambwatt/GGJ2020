@@ -20,6 +20,6 @@ public class SpaceObject : MonoBehaviour {
     public void Stop(){
         Rb.velocity = new Vector2(0, 0);
         Rb.simulated = false;
-        Debug.Log(Rb.velocity);
+       //x Debug.Log(Rb.velocity);
     }
 }
