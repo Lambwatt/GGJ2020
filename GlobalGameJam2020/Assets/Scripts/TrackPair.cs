@@ -16,7 +16,10 @@ public class TrackPair : MonoBehaviour {
     public Sprite WorkingRail;
     public Sprite BrokenRail;
 
+    public string[] PairTypes;
+    public Sprite[] PairSprites;
 
+    public string ActiveType;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +28,12 @@ public class TrackPair : MonoBehaviour {
 
     public void Initialize(bool damaged = false)
     {
-        
+        int typeChoice = Random.Range(0, PairTypes.Length);
+        ActiveType = PairTypes[typeChoice];
+
+        Parts[0].sprite = PairSprites[typeChoice];
+        Parts[1].sprite = PairSprites[typeChoice];
+
         Damaged = damaged;
         if (Damaged)
         {

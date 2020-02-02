@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44c5ced1047044718dd23a1a06e1c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PairType: Diamond
+  PairType: Club
 --- !u!212 &212833410039554270
 SpriteRenderer:
   m_ObjectHideFlags: 1
