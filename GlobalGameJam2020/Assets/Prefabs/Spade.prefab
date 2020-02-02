@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rb: {fileID: 50131194722657858}
   MinSpeed: 1
-  MaxSpeed: 5
+  MaxSpeed: 4
   NeverMove: 0
 --- !u!114 &114486800499655434
 MonoBehaviour:

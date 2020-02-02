@@ -510,6 +510,11 @@ Prefab:
       propertyPath: Damaged
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114591009464043266, guid: cfe6b47cb26194e2c827c5de0614d405,
+        type: 2}
+      propertyPath: ActiveType
+      value: Diamond
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cfe6b47cb26194e2c827c5de0614d405, type: 2}
   m_IsPrefabParent: 0

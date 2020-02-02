@@ -26,15 +26,31 @@ public class GrabRegion : MonoBehaviour {
         {
             //check if pair matches an element in the list
             TrackPair pair = collision.GetComponent<TrackPair>();
-
-            if(pair.Damaged && GrabbedStuff.Count>0){
-                pair.Repair();
-                Spawner.ActivateSpawner();
-                Spawner.StopTracking(GrabbedStuff[0].transform);
-                Destroy(GrabbedStuff[0].gameObject);
-                GrabbedStuff.RemoveAt(0);
-                ScoreManager.AddToScore(FixPairValue);
+            if (pair.Damaged)
+            {
+                for (int i = 0; i < GrabbedStuff.Count; i++)
+                {
+                    if (GrabbedStuff[i].PairType == pair.ActiveType)
+                    {
+                        pair.Repair();
+                        Spawner.ActivateSpawner();
+                        Spawner.StopTracking(GrabbedStuff[i].transform);
+                        Destroy(GrabbedStuff[i].gameObject);
+                        GrabbedStuff.RemoveAt(i);
+                        ScoreManager.AddToScore(FixPairValue);
+                        break;
+                    }
+                }
             }
+
+            //if(pair.Damaged && GrabbedStuff.Count>0){
+            //    pair.Repair();
+            //    Spawner.ActivateSpawner();
+            //    Spawner.StopTracking(GrabbedStuff[0].transform);
+            //    Destroy(GrabbedStuff[0].gameObject);
+            //    GrabbedStuff.RemoveAt(0);
+            //    ScoreManager.AddToScore(FixPairValue);
+            //}
         }
         else if(val == "Grabbable")
         {
