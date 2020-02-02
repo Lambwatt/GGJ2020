@@ -7,9 +7,11 @@ public class PlayerMovement : MonoBehaviour {
     public Rigidbody2D Rb;
     public float Speed;
 
+    public GameObject ThrusterSprites;
+
 	// Use this for initialization
 	void Start () {
-		
+        ThrusterSprites.SetActive(false);
 	}
 	
     // Update is called once per frame
@@ -36,9 +38,15 @@ public class PlayerMovement : MonoBehaviour {
         {
             velocity += new Vector2(1, 0);
         }
-
-        transform.rotation = Quaternion.FromToRotation(Vector2.right, velocity);
+        
         Rb.velocity = velocity * Speed;
+        if (velocity.magnitude > 0.9f)
+        {
+            transform.rotation = Quaternion.FromToRotation(Vector2.right, velocity);
+            ThrusterSprites.SetActive(true);
+        }else{
+            ThrusterSprites.SetActive(false);
+        }
     }
 
 }
