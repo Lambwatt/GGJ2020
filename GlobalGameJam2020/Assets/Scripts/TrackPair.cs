@@ -24,9 +24,9 @@ public class TrackPair : MonoBehaviour {
         }
     }
 
-    public void Repair(){
+    public void Repair(bool fix = true){
         Damaged = false;
-        Fixed = true;
+        Fixed = fix;
         for (int i = 0; i < Parts.Length; i++){
             Parts[i].color = Color.white;
         }

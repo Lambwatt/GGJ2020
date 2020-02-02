@@ -14,6 +14,8 @@ public class PlayerBody : MonoBehaviour {
     public Text ScoreText;
     public string ScoreHeader = "Score: ";
 
+    int TrainCount = 0;
+
 	// Use this for initialization
 	void Start () {
         UpdateHP();
@@ -44,6 +46,18 @@ public class PlayerBody : MonoBehaviour {
 
     void UpdateHP(){
         HPText.text = HPHeader + HP;
+    }
+
+    public void AddTrain(){
+        TrainCount += 1;
+    }
+
+    public void LoseTrain(){
+        TrainCount -= 1;
+        Debug.Log("Train Lost. Down to "+TrainCount);
+        if(TrainCount<=0){
+            Die();
+        }
     }
 
     private void Die(){

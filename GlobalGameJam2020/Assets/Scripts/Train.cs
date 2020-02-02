@@ -12,8 +12,11 @@ public class Train : MonoBehaviour {
     public int TravelledPairValue = 10;
     public PlayerBody Player;
 
+    bool dead = false;
+
 	private void Start()
 	{
+        Player.AddTrain();
         StartCoroutine(WaitThenStart());
 	}
 
@@ -30,6 +33,8 @@ public class Train : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+        if (dead) return;
+        
         string val = collision.tag;
 
         if(val == "Pair")
@@ -43,6 +48,8 @@ public class Train : MonoBehaviour {
                 //Rb.velocity = new Vector2(Mathf.Cos(angle) * Rb.velocity.x - Mathf.Sin(angle) * Rb.velocity.y,
                                           //Mathf.Sin(angle) * Rb.velocity.x + Mathf.Cos(angle) * Rb.velocity.y);
                 Rb.velocity *= 0.75f;
+                pair.Repair(false);
+                Player.LoseTrain();
             }else{
                 if (pair.Fixed)
                 {
@@ -58,15 +65,13 @@ public class Train : MonoBehaviour {
         }
 	}
 
-    void TakeDamage()
-    {
-        HP--;
-        if(HP <= 0){
-            Die();
-        }
+    void Die(){
+        StartCoroutine(HandleExplosion());
     }
 
-    void Die(){
-        
+    IEnumerator HandleExplosion()
+    {
+        yield return new WaitForSeconds(4);
+        Destroy(gameObject);
     }
 }
