@@ -8,6 +8,13 @@ public class TrackPair : MonoBehaviour {
     public bool Fixed = false;
     public SpriteRenderer[] Parts;
 
+    public Color FixedColor;
+    public Color DamagedColor;
+
+    public SpriteRenderer[] Rails;
+
+    public Sprite WorkingRail;
+    public Sprite BrokenRail;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +27,7 @@ public class TrackPair : MonoBehaviour {
         if (Damaged)
         {
             int choice = Random.Range(0, Parts.Length);
-            Parts[choice].color = Color.black;
+            Parts[choice].color = DamagedColor;
         }
     }
 
@@ -28,7 +35,7 @@ public class TrackPair : MonoBehaviour {
         Damaged = false;
         Fixed = fix;
         for (int i = 0; i < Parts.Length; i++){
-            Parts[i].color = Color.white;
+            Parts[i].color = FixedColor;
         }
     }
 

@@ -15,6 +15,9 @@ public class TrainLink : MonoBehaviour {
 
     public bool Active = true;
 
+    //public Transform FacePrevious; 
+    //public Transform FaceNext; 
+
 	public void SetNextDirection(Train train)
     {
         Vector3 dir = (NextLink.transform.position - transform.position).normalized;
@@ -51,6 +54,9 @@ public class TrainLink : MonoBehaviour {
             trackPair.Initialize(Random.Range(0,4)==0);
         }
 
+        //Try again later
+        //NextLink.FaceNext.rotation = trackAngle;
+        //LinkBeyond.FacePrevious.rotation = Quaternion.FromToRotation(Vector3.right, -dir);
 
         //prevent multiple activation
         Active = false;
