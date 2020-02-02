@@ -205,9 +205,11 @@ MonoBehaviour:
   - {fileID: 212682270727149220}
   FixedColor: {r: 1, g: 0.9450981, b: 0.12941177, a: 1}
   DamagedColor: {r: 0, g: 0, b: 0, a: 1}
-  Rails: []
-  WorkingRail: {fileID: 0}
-  BrokenRail: {fileID: 0}
+  Rails:
+  - {fileID: 212514016499126584}
+  - {fileID: 212629300195404712}
+  WorkingRail: {fileID: 21300000, guid: 296aecfad7ca14a69934f6b63b9a4039, type: 3}
+  BrokenRail: {fileID: 21300000, guid: 27be1be4a4c614b9b96446ee5498fcd4, type: 3}
 --- !u!212 &212118661356405826
 SpriteRenderer:
   m_ObjectHideFlags: 1

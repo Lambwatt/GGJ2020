@@ -3177,6 +3177,15 @@ MonoBehaviour:
   spawnable:
   - {fileID: 4478985531878254, guid: b43fd4de595054dd487567acde335bb6, type: 2}
   - {fileID: 4478985531878254, guid: 6b0f0889c8f524ffc9458e911fc634d5, type: 2}
+  - {fileID: 4478985531878254, guid: 6677e8090be0b4b259f14e3583dd773c, type: 2}
+  - {fileID: 4478985531878254, guid: 51e70a002b7b2412cbef7543f08e0e12, type: 2}
+  - {fileID: 4478985531878254, guid: 5bed61866d79d411ba51ca4f2bb6cef9, type: 2}
+  - {fileID: 4478985531878254, guid: dee7f6da037dc4cfe9c8c58a7e3e239e, type: 2}
+  - {fileID: 4478985531878254, guid: e4d72bf16f38544b588458bcf2fb169b, type: 2}
+  - {fileID: 4478985531878254, guid: b84e5ed52a26942a59dcc0a1e5bda9f9, type: 2}
+  - {fileID: 4478985531878254, guid: 0cb56f724dad34f19b5df0b066525ebb, type: 2}
+  - {fileID: 4478985531878254, guid: 3ae7074cd301a477588ba568b2ce841a, type: 2}
+  - {fileID: 4478985531878254, guid: 7f92c300f91294dc2b519daa10ed0d2f, type: 2}
   numObjects: 120
   killRadius: 30
   spawnRadius: 10
